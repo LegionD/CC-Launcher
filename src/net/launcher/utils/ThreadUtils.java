@@ -121,7 +121,7 @@ public class ThreadUtils
 					Frame.main.panel.tmpString = "Загрузка данных...";
 					String personal = BaseUtils.execute(BaseUtils.buildUrl("launcher.php"), new Object[]
 					{
-						"action", encrypt("getpersonal:0:"+Frame.main.login.getText()+":"+new String(Frame.main.password.getPassword()), Settings.key1),
+						"action", encrypt("getpersonal:0:"+Frame.main.login.getText()+":"+new String(Frame.main.password.getPassword()), Settings.key2),
 					});
 					
                     if(personal.contains("=="))
