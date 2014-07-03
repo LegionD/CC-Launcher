@@ -26,36 +26,44 @@ if($password != $password2) die("errorPassToPass");
 
 try {
  
-$stmt = $db->prepare("SELECT $db_columnMail FROM $db_table WHERE $db_columnMail= :mail");
-$stmt->bindValue(':mail', $mail);
-$stmt->execute();
-if($stmt->rowCount())
-{ exit('emailErrorPovtor'); }
+    $stmt = $db->prepare("SELECT $db_columnMail FROM $db_table WHERE $db_columnMail= :mail");
+    $stmt->bindValue(':mail', $mail);
+    $stmt->execute();
+    if($stmt->rowCount())
+    { 
+        exit('emailErrorPovtor'); 
+    }
+    $stmt = $db->prepare("SELECT $db_columnUser FROM $db_table WHERE $db_columnUser= :login");
+    $stmt->bindValue(':login', $login);
+    $stmt->execute();
+    if($stmt->rowCount())
+    { 
+        exit('loginErrorPovtor'); 
+    }
 
-$stmt = $db->prepare("SELECT $db_columnUser FROM $db_table WHERE $db_columnUser= :login");
-$stmt->bindValue(':login', $login);
-$stmt->execute();
-if($stmt->rowCount())
-{ exit('loginErrorPovtor'); }
-
-$stmt = $db->prepare("SELECT $db_columnIp FROM $db_table WHERE $db_columnIp= :ip");
-$stmt->bindValue(':ip', $ip);
-$stmt->execute();
-if($stmt->rowCount())
-{ exit('Erroripip'); }
+    $stmt = $db->prepare("SELECT $db_columnIp FROM $db_table WHERE $db_columnIp= :ip");
+    $stmt->bindValue(':ip', $ip);
+    $stmt->execute();
+    if($stmt->rowCount())
+    { 
+        exit('Erroripip'); 
+    }
 
 } catch(PDOException $pe) {
-		die("errorsql".$logger->WriteLine($log_date.$pe));  //вывод ошибок MySQL в m.log
+    die("errorsql".$logger->WriteLine($log_date.$pe));  //вывод ошибок MySQL в m.log
 }
 if($crypt == 'hash_md5')
 { 
-$checkPass = md5($password);
+    $checkPass = md5($password);
 }
 else if($crypt == 'hash_dle')
 { 
-$checkPass = md5(md5($password));
+    $checkPass = md5(md5($password));
 }
-else die("hasherror");
+else
+{
+    die("hasherror");
+}
 $stmt = $db->prepare("INSERT INTO $db_table ($db_columnUser,$db_columnPass,$db_columnMail,$db_columnDatareg,$db_columnIp) VALUES(':login',':checkPass',':mail',NOW(),'$ip')");
 $stmt->bindValue(':login', $login);
 $stmt->bindValue(':checkPass', $checkPass);
@@ -63,5 +71,4 @@ $stmt->bindValue(':mail', $mail);
 $stmt->bindValue(':checkPass', $checkPass);
 $stmt->execute();
 echo "done";
-}
 ?>

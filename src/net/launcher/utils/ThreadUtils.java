@@ -65,29 +65,33 @@ public class ThreadUtils
 			{
 				Frame.main.panel.tmpString = "Ошибка подключения";
 				error = true;
-			} else if(answer.contains("badlauncher<$>"))
+			} else if(answer.contains("badlauncher"))
 			{
-				Frame.main.setUpdateComp(answer.replace("badlauncher<$>_", "" ));
+				Frame.main.setUpdateComp(answer.replace("badlauncher_", "" ));
 				return;
-			} else if(answer.contains("errorLogin<$>"))
+			} else if(answer.contains("errorLogin"))
 			{
 				Frame.main.panel.tmpString = "Ошибка авторизации (Логин, пароль)";
 				error = true;
-			} else if(answer.contains("errorsql<$>"))
+			} else if(answer.contains("errorsql"))
 			{
 				Frame.main.panel.tmpString = "Ошибка sql";
 				error = true;
-			} else if(answer.contains("client<$>"))
+			} else if(answer.contains("client"))
 			{
-				Frame.main.panel.tmpString = "Ошибка: "+answer.replace("client<$>", "клиент")+" не найден";
+				Frame.main.panel.tmpString = "Ошибка: "+answer.replace("client", "клиент")+" не найден";
 				error = true;
-			} else if(answer.contains("temp<$>"))
+			} else if(answer.contains("temp"))
 			{
 				Frame.main.panel.tmpString = "Подождите, перед следущей попыткой ввода (Логин Пароль)";
-				error = true;	
-			} else if(answer.contains("badhash<$>"))
+				error = true;
+			} else if(answer.contains("noactive"))
 			{
-				Frame.main.panel.tmpString = "Ошибка: Неподдерживаемый способ хеширования";
+				Frame.main.panel.tmpString = "Ваш аккаунт не активирован!";
+				error = true;	
+			} else if(answer.contains("badhash"))
+			{
+				Frame.main.panel.tmpString = "Ошибка: Неподдерживаемый способ шифровки";
 				error = true;	
 			} else if(answer.split("<br>").length != 3)
 			{
@@ -117,7 +121,7 @@ public class ThreadUtils
 					Frame.main.panel.tmpString = "Загрузка данных...";
 					String personal = BaseUtils.execute(BaseUtils.buildUrl("launcher.php"), new Object[]
 					{
-						"action", encrypt("getpersonal:0:"+Frame.main.login.getText()+":"+new String(Frame.main.password.getPassword()), Settings.key2),
+						"action", encrypt("getpersonal:0:"+Frame.main.login.getText()+":"+new String(Frame.main.password.getPassword()), Settings.key1),
 					});
 					
                     if(personal.contains("=="))
