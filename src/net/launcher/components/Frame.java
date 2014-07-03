@@ -472,7 +472,7 @@ public class Frame extends JFrame implements ActionListener, FocusListener
 			setAuthComp();
 		}                
 		if(e.getSource() == buyVaucher){
-			openURL(Settings.buyVauncherLink);
+//			openURL(Settings.buyVauncherLink);
 		}
 
 		if(e.getSource() == exchangeButton)
