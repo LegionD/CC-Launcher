@@ -36,60 +36,60 @@ public class Frame extends JFrame implements ActionListener, FocusListener
 	private static final long serialVersionUID = 1L;
 
 	public static Frame main;
-		public Panel panel = new Panel(0);
-			public Dragger dragger = new Dragger();
-			public Button toGame = new Button("Копать");
-			public Button toPersonal = new Button("Войти в ЛК");
-			public Button toOptions = new Button("Настройки");
-            public Button toRegister = new Button("Регистрация");
-			public Checkbox savePass = new Checkbox("Сохранить пароль");
-			public JTextPane browser = new JTextPane();
-			public JTextPane personalBrowser = new JTextPane();
-			public JScrollPane bpane = new JScrollPane(browser);
-			public JScrollPane personalBpane = new JScrollPane(personalBrowser);
-			public Textfield login = new Textfield();
-			public Passfield password = new Passfield();
-			public Combobox servers = new Combobox(getServerNames(), 0);
-			public Serverbar serverbar = new Serverbar();
+        public Panel panel = new Panel(0);
+        public Dragger dragger = new Dragger();
+        public Button toGame = new Button("Копать");
+        public Button toPersonal = new Button("Войти в ЛК");
+        public Button toOptions = new Button("Настройки");
+        public Button toRegister = new Button("Регистрация");
+        public Checkbox savePass = new Checkbox("Сохранить пароль");
+        public JTextPane browser = new JTextPane();
+        public JTextPane personalBrowser = new JTextPane();
+        public JScrollPane bpane = new JScrollPane(browser);
+        public JScrollPane personalBpane = new JScrollPane(personalBrowser);
+        public Textfield login = new Textfield();
+        public Passfield password = new Passfield();
+        public Combobox servers = new Combobox(getServerNames(), 0);
+        public Serverbar serverbar = new Serverbar();
 
-			public LinkLabel[] links = new LinkLabel[Settings.links.length];
+        public LinkLabel[] links = new LinkLabel[Settings.links.length];
 
-			public Dragbutton hide = new Dragbutton();
-			public Dragbutton close = new Dragbutton();
+        public Dragbutton hide = new Dragbutton();
+        public Dragbutton close = new Dragbutton();
 
-			public Button update_exe = new Button("exe");
-			public Button update_jar = new Button("jar");
-			public Button update_no = new Button("Выход");
+        public Button update_exe = new Button("exe");
+        public Button update_jar = new Button("jar");
+        public Button update_no = new Button("Выход");
 
-			public Checkbox loadnews = new Checkbox("Загружать новости");
-            public Checkbox Music = new Checkbox("Музыка в лаунчере");
-			public Checkbox updatepr = new Checkbox("Принудительное обновление");
-		    public Checkbox cleanDir = new Checkbox("Очистить папку");
-			public Checkbox fullscreen = new Checkbox("Запустить в полный экран");
-			public Textfield memory = new Textfield();
+        public Checkbox loadnews = new Checkbox("Загружать новости");
+        public Checkbox Music = new Checkbox("Музыка в лаунчере");
+        public Checkbox updatepr = new Checkbox("Принудительное обновление");
+        public Checkbox cleanDir = new Checkbox("Очистить папку");
+        public Checkbox fullscreen = new Checkbox("Запустить в полный экран");
+        public Textfield memory = new Textfield();
                         
                         
-            public Textfield loginReg = new Textfield();
-            public Passfield passwordReg = new Passfield();
-            public Passfield password2Reg = new Passfield();
-            public Textfield mailReg = new Textfield();
-            public Button okreg = new Button("Регистрация");
-            public Button closereg = new Button("Отмена");
+        public Textfield loginReg = new Textfield();
+        public Passfield passwordReg = new Passfield();
+        public Passfield password2Reg = new Passfield();
+        public Textfield mailReg = new Textfield();
+        public Button okreg = new Button("Регистрация");
+        public Button closereg = new Button("Отмена");
                         
-			public Button options_close = new Button("Закрыть");
+        public Button options_close = new Button("Закрыть");
 
-			public Button buyCloak = new Button("Купить плащ");
-			public Button changeSkin = new Button("Сменить скин");
-			public Textfield vaucher = new Textfield();
-			public Button vaucherButton = new Button("Пополнить");
-			public Button buyVaucher = new Button("Купить");
-			public Textfield exchangeFrom = new Textfield();
-			public Textfield exchangeTo = new Textfield();
-			public Button exchangeButton= new Button("Обменять");
-			public Button buyVip = new Button(BaseUtils.empty);
-			public Button buyPremium = new Button(BaseUtils.empty);
-			public Button buyUnban = new Button("Купить разбан");
-			public Button toGamePersonal = new Button("В игру");
+        public Button buyCloak = new Button("Сменить плащ");
+        public Button changeSkin = new Button("Сменить скин");
+        public Textfield vaucher = new Textfield();
+        public Button vaucherButton = new Button("Пополнить");
+        public Button buyVaucher = new Button("Купить");
+        public Textfield exchangeFrom = new Textfield();
+        public Textfield exchangeTo = new Textfield();
+        public Button exchangeButton= new Button("Обменять");
+        public Button buyVip = new Button(BaseUtils.empty);
+        public Button buyPremium = new Button(BaseUtils.empty);
+        public Button buyUnban = new Button("Купить разбан");
+        public Button toGamePersonal = new Button("В игру");
 
 	public Frame()
 	{	
@@ -124,8 +124,8 @@ public class Frame extends JFrame implements ActionListener, FocusListener
 		toPersonal.addActionListener(this);
 		toPersonal.setVisible(Settings.usePersonal);
 		toOptions.addActionListener(this);
-        toRegister.addActionListener(this);
-        toRegister.setVisible(Settings.useRegister);
+                toRegister.addActionListener(this);
+                toRegister.setVisible(Settings.useRegister);
 		login.setText("Логин...");
 		login.addActionListener(this);
 		login.addFocusListener(this);
@@ -196,10 +196,10 @@ public class Frame extends JFrame implements ActionListener, FocusListener
 		});
 
 		options_close.addActionListener(this);
-        closereg.addActionListener(this);
-        okreg.addActionListener(this);
+                closereg.addActionListener(this);
+                okreg.addActionListener(this);
 		loadnews.addActionListener(this);
-        Music.addActionListener(this);
+                Music.addActionListener(this);
 		fullscreen.addActionListener(this);
 
 		buyCloak.addActionListener(this);
@@ -323,7 +323,7 @@ public class Frame extends JFrame implements ActionListener, FocusListener
 				main.memory.setText(String.valueOf(getPropertyInt("memory", 512)));
 				main.fullscreen.setSelected(getPropertyBoolean("fullscreen"));
 				main.loadnews.setSelected(getPropertyBoolean("loadnews", true));
-                main.Music.setSelected(getPropertyBoolean("Music", true));
+                                main.Music.setSelected(getPropertyBoolean("Music", true));
 			} catch(Exception e){}
 		} catch(Exception e)
 		{
@@ -425,7 +425,7 @@ public class Frame extends JFrame implements ActionListener, FocusListener
 		{
 			setProperty("fullscreen", fullscreen.isSelected());
 			setProperty("loadnews",   loadnews.isSelected());
-            setProperty("Music",   Music.isSelected());
+                        setProperty("Music",   Music.isSelected());
 		}
 
 		if(e.getSource() == buyCloak)
@@ -541,11 +541,11 @@ public class Frame extends JFrame implements ActionListener, FocusListener
 		panel.setRegister(screen);
 
 		panel.add(loginReg);
-        panel.add(passwordReg);
-        panel.add(password2Reg);
-        panel.add(mailReg);
+                panel.add(passwordReg);
+                panel.add(password2Reg);
+                panel.add(mailReg);
                 
-        panel.add(okreg);
+                panel.add(okreg);
 		panel.add(closereg);
 
 		repaint();
@@ -560,7 +560,7 @@ public class Frame extends JFrame implements ActionListener, FocusListener
 		addFrameComp();
 		panel.setOptions(screen);
 		panel.add(loadnews);
-        panel.add(Music);
+                panel.add(Music);
 		panel.add(updatepr);
 		panel.add(cleanDir);
 		panel.add(fullscreen);

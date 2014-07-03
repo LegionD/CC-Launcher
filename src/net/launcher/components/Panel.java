@@ -167,23 +167,23 @@ public class Panel extends JPanel
 			
 			if(pc.canUploadCloak)
 			{
-				g.setColor(cloakPrice.color);
-				g.setFont(BaseUtils.getFont(cloakPrice.fontName, cloakPrice.fontSize));
+				//g.setColor(cloakPrice.color);
+				//g.setFont(BaseUtils.getFont(cloakPrice.fontName, cloakPrice.fontSize));
 				
-				String cloakPriceSTR = pc.cloakPrice + " рублей";
+				//String cloakPriceSTR = pc.cloakPrice + " рублей";
 				
-				g.drawString(cloakPriceSTR, cloakPrice.x - g.getFontMetrics().stringWidth(cloakPriceSTR), cloakPrice.y + g.getFontMetrics().getHeight());
+				//g.drawString(cloakPriceSTR, cloakPrice.x - g.getFontMetrics().stringWidth(cloakPriceSTR), cloakPrice.y + g.getFontMetrics().getHeight());
 			}
 			
-			String iconmoney = pc.iconmoney + " монет";
-			g.setColor(iConomy.color);
-			g.setFont(BaseUtils.getFont(iConomy.fontName, iConomy.fontSize));
-			g.drawString(iconmoney, iConomy.x - g.getFontMetrics().stringWidth(iconmoney), iConomy.y + g.getFontMetrics().getHeight());
+			//String iconmoney = pc.iconmoney + " монет";
+			//g.setColor(iConomy.color);
+			//g.setFont(BaseUtils.getFont(iConomy.fontName, iConomy.fontSize));
+			//g.drawString(iconmoney, iConomy.x - g.getFontMetrics().stringWidth(iconmoney), iConomy.y + g.getFontMetrics().getHeight());
 			
-			String realmoneySTR = pc.realmoney + " рублей";
-			g.setColor(realmoney.color);
-			g.setFont(BaseUtils.getFont(realmoney.fontName, realmoney.fontSize));
-			g.drawString(realmoneySTR, realmoney.x - g.getFontMetrics().stringWidth(realmoneySTR), realmoney.y + g.getFontMetrics().getHeight());
+			//String realmoneySTR = pc.realmoney + " рублей";
+			//g.setColor(realmoney.color);
+			//g.setFont(BaseUtils.getFont(realmoney.fontName, realmoney.fontSize));
+			//g.drawString(realmoneySTR, realmoney.x - g.getFontMetrics().stringWidth(realmoneySTR), realmoney.y + g.getFontMetrics().getHeight());
 			
 			g.setColor(prices.color);
 			g.setFont(BaseUtils.getFont(prices.fontName, prices.fontSize));
