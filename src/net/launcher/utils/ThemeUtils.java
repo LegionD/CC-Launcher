@@ -28,7 +28,7 @@ public class ThemeUtils extends BaseUtils
 		dbuttons.apply(main.hide, main.close);
 		toGame.apply(main.toGame);
 		toPersonal.apply(main.toPersonal);
-        toRegister.apply(main.toRegister);
+                toRegister.apply(main.toRegister);
 		toOptions.apply(main.toOptions);
 		savePass.apply(main.savePass);
 		login.apply(main.login);
@@ -38,19 +38,19 @@ public class ThemeUtils extends BaseUtils
 		serverbar.apply(main.serverbar);
 		
 		loadnews.apply(main.loadnews);
-                Music.apply(main.Music);
+//                Music.apply(main.Music);
 		updatepr.apply(main.updatepr);
 		cleandir.apply(main.cleanDir);
 		fullscrn.apply(main.fullscreen);
 		memory.apply(main.memory);
 		close.apply(main.options_close);
                 
-        closereg.apply(main.closereg);
+                closereg.apply(main.closereg);
 		loginReg.apply(main.loginReg);
-        passwordReg.apply(main.passwordReg);
-        password2Reg.apply(main.password2Reg);
-        mailReg.apply(main.mailReg);
-        okreg.apply(main.okreg);
+                passwordReg.apply(main.passwordReg);
+                password2Reg.apply(main.password2Reg);
+                mailReg.apply(main.mailReg);
+                okreg.apply(main.okreg);
                 
 		buyCloak.apply(main.buyCloak);
 		changeskin.apply(main.changeSkin);

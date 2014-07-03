@@ -89,6 +89,8 @@ public class UpdaterThread extends Thread
 			ZipUtils.unzip(path, file);
 		}
 		
+                state = "Расспаковка ...";
+                
 		if(asupdate)
 		{
 			String path = BaseUtils.getAssetsDir().getAbsolutePath() + File.separator;
@@ -96,6 +98,8 @@ public class UpdaterThread extends Thread
 			BaseUtils.setProperty("assets_aspmd5", GuardUtils.getMD5(file));
 			ZipUtils.unzip(path, file);
 		}
+                
+                state = "Расспаковка завершена";
 		
 		new Game(answer);
 	} catch (Exception e) { e.printStackTrace(); state = e.toString(); error = true; }}
